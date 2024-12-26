@@ -1,5 +1,7 @@
 package GeeksForGeeks.Medium;
 
+import java.util.Arrays;
+
 public class AllocateMinimumPages {
     private static boolean canBeAllocated(int arr[], int k, int mid) {
         int student = 1;
@@ -20,7 +22,7 @@ public class AllocateMinimumPages {
     }
     public static int findPages(int[] arr, int k) {
         if(arr.length < k) return -1;
-        int start = 0;
+        int start = Arrays.stream(arr).max().getAsInt();
         int end = 0;
         for(int i : arr) {
             end += i;
